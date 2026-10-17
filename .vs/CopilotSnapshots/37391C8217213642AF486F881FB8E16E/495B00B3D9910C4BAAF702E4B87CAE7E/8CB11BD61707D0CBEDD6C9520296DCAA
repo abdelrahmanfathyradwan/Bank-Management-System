@@ -1,0 +1,27 @@
+﻿using BankManagementSystem.Bank;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BankManagementSystem.Models
+{
+    internal class Transaction
+    {
+      
+        public decimal Id { get; set; }
+        public TransactionType Type { get; set; } = TransactionType.Deposit;
+        public decimal Amount { get; set; }
+        public decimal BalanceBeforeOperation { get; set; }
+        public decimal BalanceAfterOperation { get; set; }
+        public DateTime Date { get; set; }
+
+        public Transaction(decimal id,decimal amount,DateTime date,decimal balanceBeforeOperation, decimal balanceAfterOperation)
+        {
+            Id = id;
+            Amount = amount;
+            Date = date;
+            BalanceBeforeOperation = balanceBeforeOperation;
+            BalanceAfterOperation = BalanceAfterOperation;
+        }
+    }
+}

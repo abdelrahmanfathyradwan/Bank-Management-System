@@ -1,0 +1,16 @@
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.AssemblyInfo.cs
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.sourcelink.json
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\bin\Debug\net10.0\BankManagementSystem.exe
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\bin\Debug\net10.0\BankManagementSystem.deps.json
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\bin\Debug\net10.0\BankManagementSystem.runtimeconfig.json
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\bin\Debug\net10.0\BankManagementSystem.dll
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\bin\Debug\net10.0\BankManagementSystem.pdb
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.dll
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\refint\BankManagementSystem.dll
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.pdb
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankManagementSystem.genruntimeconfig.cache
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\ref\BankManagementSystem.dll
+C:\Users\PC\source\repos\CShaerpFundamentals\BankManagementSystem\BankManagementSystem\obj\Debug\net10.0\BankMana.A2EB63A9.Up2Date

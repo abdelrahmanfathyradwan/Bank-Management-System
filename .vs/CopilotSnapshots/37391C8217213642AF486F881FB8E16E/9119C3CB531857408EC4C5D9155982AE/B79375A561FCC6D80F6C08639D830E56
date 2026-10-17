@@ -1,0 +1,106 @@
+﻿using System;
+using BankManagementSystem.Models;
+
+namespace BankManagementSystem.Bank
+{
+    internal class BankAccount
+    {
+        public decimal TransactionId { get; set; }
+        public int AccountNumber { get; private set; }
+        public decimal Balance { get; private set; }
+        public AccountStatus Status { get; private set; } = AccountStatus.Active;
+        public AccountType AccountType { get; private set; } = AccountType.Current;
+
+        public Customer Customer { get; }
+
+        Transaction history = new();
+
+        public BankAccount(int accountNumber, Customer customer)
+        {
+            AccountNumber = accountNumber;
+            Customer = customer ?? throw new ArgumentNullException(nameof(customer));
+            TransactionId = 1;
+        }
+
+        public void Deposit(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(amount),
+                    "Deposit amount must be greater than zero.");
+            }
+
+            if (Status != AccountStatus.Active)
+            {
+                throw new InvalidOperationException(
+                    "Cannot deposit into an account that is not active.");
+            }
+
+            Balance += amount;
+            history = new Transaction(TransactionId, amount, DateTime.Now);
+            TransactionId++;
+        }
+
+        public void Withdraw(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(amount),
+                    "Deposit amount must be greater than zero.");
+            }
+
+            if (Status != AccountStatus.Active)
+            {
+                throw new InvalidOperationException(
+                    "Cannot Withdraw into an account that is not active.");
+            }
+
+            if (amount > Balance)
+            {
+                throw new InvalidOperationException(
+                    "Withdraw amount must be less than Balance.");
+            }
+
+            Balance -= amount;
+            history = new Transaction(TransactionId, amount, DateTime.Now);
+            TransactionId++;
+        }
+
+
+        public void Freeze()
+        {
+            if (Status != AccountStatus.Active)
+            {
+                throw new InvalidOperationException(
+                    "Only active accounts can be frozen.");
+            }
+
+            Status = AccountStatus.Frozen;
+        }
+
+        public void Unfreeze()
+        {
+            if (Status != AccountStatus.Frozen)
+            {
+                throw new InvalidOperationException(
+                    "Only frozen accounts can be unfrozen.");
+            }
+
+            Status = AccountStatus.Active;
+        }
+
+        public void Close()
+        {
+            if (Status == AccountStatus.Closed)
+            {
+                throw new InvalidOperationException(
+                    "Account is already closed.");
+            }
+
+            Status = AccountStatus.Closed;
+        }
+
+    }
+}

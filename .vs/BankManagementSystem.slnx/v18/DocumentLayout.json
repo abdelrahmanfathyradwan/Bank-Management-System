@@ -1,0 +1,157 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\bank\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\bank\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\bank\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\bank\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\presentation\\transactionmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\presentation\\transactionmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\presentation\\customermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\presentation\\customermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\presentation\\accountmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\presentation\\accountmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|c:\\users\\pc\\source\\repos\\cshaerpfundamentals\\bankmanagementsystem\\bankmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3316A5CF-70DC-0A51-B6F6-F168D4E8D92B}|BankManagementSystem\\BankManagementSystem.csproj|solutionrelative:bankmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerMenu.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\CustomerMenu.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Presentation\\CustomerMenu.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\CustomerMenu.cs",
+              "RelativeToolTip": "BankManagementSystem\\Presentation\\CustomerMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T23:30:47.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Models\\Transaction.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Models\\Transaction.cs",
+              "RelativeToolTip": "BankManagementSystem\\Models\\Transaction.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwCQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T05:29:02.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Bank\\BankAccount.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Bank\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Bank\\BankAccount.cs",
+              "RelativeToolTip": "BankManagementSystem\\Bank\\BankAccount.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAYwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T22:03:23.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransactionType.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Bank\\TransactionType.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Bank\\TransactionType.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Bank\\TransactionType.cs",
+              "RelativeToolTip": "BankManagementSystem\\Bank\\TransactionType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T08:02:50.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TransactionMenu.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\TransactionMenu.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Presentation\\TransactionMenu.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\TransactionMenu.cs",
+              "RelativeToolTip": "BankManagementSystem\\Presentation\\TransactionMenu.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAADwv70AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T23:33:26.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountMenu.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\AccountMenu.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Presentation\\AccountMenu.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Presentation\\AccountMenu.cs",
+              "RelativeToolTip": "BankManagementSystem\\Presentation\\AccountMenu.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAswJkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T23:32:00.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Services\\AccountService.cs",
+              "RelativeToolTip": "BankManagementSystem\\Services\\AccountService.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAYwKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T20:42:15.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "BankManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\CShaerpFundamentals\\BankManagementSystem\\BankManagementSystem\\Program.cs",
+              "RelativeToolTip": "BankManagementSystem\\Program.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T07:53:50.432Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+﻿using BankManagementSystem.Bank;
+using BankManagementSystem.Services;
+using System.Linq;
+
+
+namespace BankManagementSystem
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            CustomerService customerService = new();
+            AccountService accountService = new(customerService);
+
+            while (true)
+            {
+                DisplayMenu();
+
+                if (!int.TryParse(Console.ReadLine(), out int choice))
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                    continue;
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        CreateCustomer(customerService);
+                        break;
+
+                    case 2:
+                        CreateBankAccount(accountService);
+                        break;
+
+                    case 3:
+                        ViewAccount(accountService);
+                        break;
+
+                    case 4:
+                        ViewAllAccounts(accountService);
+                        break;
+
+                    case 5:
+                        Deposit(accountService);
+                        break;
+
+                    case 6:
+                        Withdraw(accountService);
+                        break;
+
+                    case 7:
+                        Transfer(accountService);
+                        break;
+
+                    case 8:
+                        FreezeAccount(accountService);
+                        break;
+
+                    case 9:
+                        UnfreezeAccount(accountService);
+                        break;
+
+                    case 10:
+                        CloseAccount(accountService);
+                        break;
+
+                    case 11:
+                        TransactionHistory(accountService);
+                        break;
+
+                    case 12:
+                        // Bank Statistics
+                        break;
+
+                    case 0:
+                        Console.WriteLine("Program ended.");
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid menu choice.");
+                        break;
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        private static void DisplayMenu()
+        {
+            Console.WriteLine(
+                "=================================\n" +
+                "     BANK MANAGEMENT SYSTEM\n" +
+                "=================================\n\n" +
+                "1. Create Customer\n" +
+                "2. Create Bank Account\n" +
+                "3. View Account\n" +
+                "4. View All Accounts\n" +
+                "5. Deposit\n" +
+                "6. Withdraw\n" +
+                "7. Transfer\n" +
+                "8. Freeze Account\n" +
+                "9. Unfreeze Account\n" +
+                "10. Close Account\n" +
+                "11. Transaction History\n" +
+                "12. Bank Statistics\n" +
+                "0. Exit\n\n" +
+                "Select an option:");
+        }
+
+        private static void CreateCustomer(CustomerService customerService)
+        {
+            Console.Write("Enter Full Name: ");
+            string name = Console.ReadLine() ?? string.Empty;
+
+            Console.Write("Enter Phone Number: ");
+            string phone = Console.ReadLine() ?? string.Empty;
+
+            try
+            {
+                Customer customer =
+                    customerService.CreateCustomer(name, phone);
+
+                Console.WriteLine(
+                    $"Customer created successfully. ID: {customer.Id}");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void CreateBankAccount(AccountService accountService)
+        {
+            Console.Write("Enter Customer ID: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
+
+            try
+            {
+                BankAccount account = accountService.CreateBankAccount(id);
+
+                Console.WriteLine($"Account added successfully!. ID = {account.AccountNumber}");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void ViewAccount(AccountService accountService)
+        {
+            Console.WriteLine("Enter Your Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid Input");
+                return;
+            }
+
+            try
+            {
+                BankAccount account = accountService.GetAccountById(accountNumber);
+
+                Console.WriteLine($"Account Number: {account.AccountNumber}");
+                Console.WriteLine($"Customer Name: {account.Customer.Name}");
+                Console.WriteLine($"Account Status: {account.Status}");
+                Console.WriteLine($"Account Type: {account.AccountType}");
+                Console.WriteLine($"Balance: {account.Balance}");
+                Console.WriteLine($"Customer Phone: {account.Customer.Phone}");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+        private static void ViewAllAccounts(AccountService accountService)
+        {
+            var accounts = accountService.GetAllAccounts();
+
+            if (!accounts.Any())
+            {
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("There Are Not Found Any Account");
+                Console.WriteLine("--------------------------------");
+                return;
+            }
+
+            foreach (var account in accounts)
+            {
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine($"Account Number: {account.AccountNumber}");
+                Console.WriteLine($"Account Status: {account.Status}");
+                Console.WriteLine($"Account Type: {account.AccountType}");
+                Console.WriteLine($"Customer Name: {account.Customer.Name}");
+                Console.WriteLine($"Balance: {account.Balance}");
+                Console.WriteLine($"Customer Phone: {account.Customer.Phone}");
+                Console.WriteLine("--------------------------------");
+            }
+        }
+        private static void Deposit(AccountService accountService)
+        {
+            Console.Write("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            Console.Write("Enter Amount: ");
+
+            if (!decimal.TryParse(Console.ReadLine(), out decimal amount))
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            try
+            {
+                BankAccount account = accountService.GetAccountById(accountNumber);
+
+                account.Deposit(amount);
+
+                Console.WriteLine("Amount deposited successfully.");
+                Console.WriteLine($"New Balance: {account.Balance}");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"Invalid amount: {ex.Message}");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine($"Deposit failed: {ex.Message}");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void Withdraw(AccountService accountService)
+        {
+            Console.Write("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            Console.Write("Enter Amount: ");
+
+            if (!decimal.TryParse(Console.ReadLine(), out decimal amount))
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            try
+            {
+                BankAccount account = accountService.GetAccountById(accountNumber);
+
+                account.Withdraw(amount);
+
+                Console.WriteLine("Amount Withdraw successfully.");
+                Console.WriteLine($"New Balance: {account.Balance}");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"Invalid amount: {ex.Message}");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine($"Deposit failed: {ex.Message}");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void Transfer(AccountService accountService)
+        {
+            Console.Write("Enter Sender Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int senderAccountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            Console.Write("Enter Reciver Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int reciverAccountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            Console.Write("Enter Amount: ");
+
+            if (!decimal.TryParse(Console.ReadLine(), out decimal amount))
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            try
+            {
+                BankAccount senderAccount = accountService.GetAccountById(senderAccountNumber);
+                BankAccount reciverAccount = accountService.GetAccountById(reciverAccountNumber);
+
+                Console.WriteLine($"Balance of {senderAccount.Customer.Name} before transfer operation is: {senderAccount.Balance}");
+                Console.WriteLine($"Balance of {reciverAccount.Customer.Name} before transfer operation is: {reciverAccount.Balance}");
+                Console.WriteLine($"Amount of transfer operation is: {amount}");
+                Console.WriteLine($"----------------------------------------------------------------------------");
+                accountService.Transfer(senderAccountNumber, reciverAccountNumber, amount);
+                Console.WriteLine($"Balance of {senderAccount.Customer.Name} after transfer operation is: {senderAccount.Balance}");
+                Console.WriteLine($"Balance of {reciverAccount.Customer.Name} after transfer operation is: {reciverAccount.Balance}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+        private static void FreezeAccount(AccountService accountService)
+        {
+            Console.Write("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            try
+            {
+
+                BankAccount account = accountService.GetAccountById(accountNumber);
+                accountService.FreezeAccount(accountNumber);
+
+                Console.WriteLine($"Account {account.AccountNumber} belongs to {account.Customer.Name} and has status {account.Status}.");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void UnfreezeAccount(AccountService accountService)
+        {
+            Console.Write("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            try
+            {
+
+                BankAccount account = accountService.GetAccountById(accountNumber);
+                accountService.UnfreezeAccount(accountNumber);
+
+                Console.WriteLine($"Account {account.AccountNumber} belongs to {account.Customer.Name} and has status {account.Status}.");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void CloseAccount(AccountService accountService)
+        {
+            Console.Write("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            try
+            {
+
+                BankAccount account = accountService.GetAccountById(accountNumber);
+                accountService.CloseAccount(accountNumber);
+
+                Console.WriteLine($"Account {account.AccountNumber} belongs to {account.Customer.Name} and has status {account.Status}.");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static void TransactionHistory(AccountService accountService)
+        {
+
+
+            Console.WriteLine("Enter Account Number: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int accountNumber))
+            {
+                Console.WriteLine("Invalid account number.");
+                return;
+            }
+
+            BankAccount account = accountService.GetAccountById(accountNumber);
+            AccountType accountType = account.AccountType;
+            AccountStatus accountStatus = account.Status;
+            Console.WriteLine("" +
+            "========== TRANSACTION HISTORY ==========" +
+            $"\r\n\r\nAccount Number: {accountNumber}" +
+            "\r\n\r\n" + "ID    Type         Amount    Before    After     Date");
+            Console.WriteLine("\r\n------------------------------------------------");
+
+            foreach (var operation in account.history)
+            {
+                Console.WriteLine
+                (
+                    $"\r\n{operation.Id}      " +
+                    $"{operation.Type}         " +
+                    $"{operation.Amount}    " +
+                    $"{operation.BalanceBeforeOperation}   " +
+                    $"{operation.BalanceAfterOperation}      "+
+                    $"{operation.Date}"
+                );
+            }
+            Console.WriteLine("\r\n------------------------------------------------");
+            Console.WriteLine($"\r\nTotal Transactions: {account.TransactionId}");
+        }
+    }
+}

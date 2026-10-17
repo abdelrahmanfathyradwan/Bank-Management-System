@@ -1,0 +1,111 @@
+﻿using BankManagementSystem.Bank;
+using BankManagementSystem.Services;
+using System;
+using System.Collections.Generic;
+using BankManagementSystem.Models;
+using ModelTransaction = BankManagementSystem.Models.Transaction;
+
+namespace BankManagementSystem
+{
+    internal class AccountService
+    {
+        private readonly Dictionary<int, BankAccount> _accounts = new();
+        private readonly CustomerService _customerService;
+
+        private int _nextAccountId = 10001;
+
+        public AccountService(CustomerService customerService)
+        {
+            _customerService = customerService
+                ?? throw new ArgumentNullException(nameof(customerService));
+        }
+
+        public BankAccount CreateBankAccount(int customerId)
+        {
+            Customer customer = _customerService.GetCustomerById(customerId);
+
+            BankAccount account = new(_nextAccountId, customer);
+
+            _accounts.Add(account.AccountNumber, account);
+            _nextAccountId++;
+
+            return account;
+        }
+
+        public BankAccount GetAccountById(int accountNumber)
+        {
+            if (!_accounts.TryGetValue(
+                    accountNumber, out BankAccount? account))
+            {
+                throw new KeyNotFoundException(
+                    $"Account with number {accountNumber} was not found.");
+            }
+
+            return account;
+        }
+
+        public IEnumerable<BankAccount> GetAllAccounts()
+        {
+            return _accounts.Values;
+        }
+
+        public void Transfer(int senderAccountNumber, int reciverAccountNumber, decimal amount)
+        {
+            BankAccount senderAccount = GetAccountById(senderAccountNumber);
+            BankAccount reciverAccount = GetAccountById(reciverAccountNumber);
+
+            if (reciverAccount.Status != AccountStatus.Active)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (senderAccount.Status != AccountStatus.Active)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (senderAccountNumber == reciverAccountNumber)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(amount),
+                    "Transfer amount must be greater than zero.");
+            }
+
+            if (senderAccount.Balance < amount)
+            {
+                throw new InvalidOperationException(
+                    "Insufficient balance.");
+            }
+
+            senderAccount.Withdraw(amount);
+            reciverAccount.Deposit(amount);
+            senderAccount.History.Add(new ModelTransaction());
+            
+        }
+
+
+        public void FreezeAccount(int accountNumber)
+        {
+            BankAccount account = GetAccountById(accountNumber);
+            account.Freeze();
+        }
+
+        public void UnfreezeAccount(int accountNumber)
+        {
+            BankAccount account = GetAccountById(accountNumber);
+            account.Unfreeze();
+        }
+
+        public void CloseAccount(int accountNumber)
+        {
+            BankAccount account = GetAccountById(accountNumber);
+            account.Close();
+        }
+
+    }
+}
